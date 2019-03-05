@@ -13,6 +13,7 @@ struct Node{
 bool cmp(int a, int b){
     return node[a].weight > node[b].weight;
 }
+
 void DFS(int index, int numNode, int sum){
     if (sum > Sum) {
         return;
