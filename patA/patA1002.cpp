@@ -86,6 +86,8 @@ int main() {
                 A->next = A->next->next;
                 delete(temp);
                 n--;
+            } else {
+                A = A->next
             }
             //A = A->next 这句话出了问题，A已经到达下一位了，再下一位可能会导致越界
             B = B->next;
