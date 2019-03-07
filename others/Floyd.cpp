@@ -18,7 +18,6 @@ void Floyd() {
     }
 }
 
-
 int main() {
     int  u, v, w;
     fill(dis[0], dis[0] + MAXN * MAXN, INF);
