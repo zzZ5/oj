@@ -33,7 +33,7 @@ int main() {
     return 0;
 }
 
-//总是提示段错误
+//总是提示段错误 whywhywhywhy??????
 // struct node {
 //     int index;
 //     double num;
