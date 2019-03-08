@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <algorithm>
 using namespace std;
-const  int MAXN = 1001;
+const  int MAXN = 10001;
 
 int A[MAXN], dp[MAXN];
 
