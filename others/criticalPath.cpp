@@ -38,6 +38,7 @@ bool topologicalSort() {
             }
         }
     }
+    printf("\n");
     return topOrder.size() == nodeNum;
 }
 
