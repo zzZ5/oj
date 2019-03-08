@@ -13,8 +13,6 @@ vector<Edge> G[MAXV];
 int nodeNum, edgeNum, inDegree[MAXV], ve[MAXV], vl[MAXV];
 stack<int> topOrder;
 
-
-
 bool topologicalSort() {
     queue<int> q;
     for(int i = 0; i < nodeNum; i++) {
@@ -71,8 +69,6 @@ int criticalPath() {
     }
     return ve[nodeNum-1];
 }
-
-
 
 int main() {
     int u, v, w;
