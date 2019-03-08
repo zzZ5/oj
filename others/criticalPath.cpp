@@ -16,7 +16,6 @@ stack<int> topOrder;
 
 
 bool topologicalSort() {
-    int num = 0;
     queue<int> q;
     for(int i = 0; i < nodeNum; i++) {
         if(inDegree[i] == 0) {
