@@ -3,10 +3,10 @@
 #include <queue>
 #include <algorithm>
 using namespace std;
-const int MAXN = 101;
+const int MAXV = 101;
 
-vector<int> G[MAXN];
-int nodeNum, edgeNum, inDegree[MAXN];
+vector<int> G[MAXV];
+int nodeNum, edgeNum, inDegree[MAXV];
 
 bool topologicalSort() {
     int num = 0;
@@ -36,7 +36,7 @@ bool topologicalSort() {
 
 int main() {
     int u, v;
-    fill(inDegree, inDegree + MAXN, 0);
+    fill(inDegree, inDegree + MAXV, 0);
     scanf("%d%d", &nodeNum, &edgeNum);
     for(int i = 0; i < edgeNum; i++) {
         scanf("%d%d", &u, &v);
