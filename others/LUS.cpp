@@ -12,6 +12,7 @@ int main() {
     for(int i = 0; i < n; i++) {
         scanf("%d", &A[i]);
     }
+    int longest = 0;
     for(int i = 0; i < n; i++) {
         dp[i] = 1;
         for(int j = 0; j < i; j++) {
@@ -19,12 +20,7 @@ int main() {
                 dp[i]++;
             }
         }
-    }
-    int longest = 1;
-    for(int i = 0; i < n; i++) {
-        if(dp[i] >longest){
-            longest = dp[i];
-        }
+        longest = max(longest, dp[i]);
     }
     printf("%d", longest);
     return 0;
