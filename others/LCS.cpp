@@ -1,4 +1,4 @@
-//最长公共子序列
+//最长公共子序列 (Longest common subsequence)
 #include <cstdio>
 #include <cstring>
 #include <algorithm>
