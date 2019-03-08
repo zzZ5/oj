@@ -30,7 +30,7 @@ bool topologicalSort() {
         G[u].clear();
         num++;
     }
-    return (num == nodeNum ? true : false);
+    return num == nodeNum;
 }
 
 
