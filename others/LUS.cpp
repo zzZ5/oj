@@ -1,4 +1,4 @@
-//最长不下降子序列（可以不连续）
+//最长不下降子序列（可以不连续）（Longest undescending subsequence)
 #include <cstdio>
 #include <algorithm>
 using namespace std;
