@@ -33,3 +33,57 @@
 // }
 
 //hash表查找最长回文子串
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <vector>
+#include <algorithm>
+using namespace std;
+typedef long long LL;
+const LL MOD = 1000000007;
+const LL P = 10000019;
+const LL MAXN = 10001;
+LL powP[MAXN], H1[MAXN], H2[MAXN];
+
+void init(int len) {
+    powP[0] = 1;
+    for(int i = 1; i < len; i++) {
+        powP[i] = (powP[i - 1] * P) % MOD;
+    }
+}
+
+void calH(LL H[], string &str) {
+    H[0] = str[0];
+    for(int i = 0; i < str.length(); i++) {
+        H[i] = (H[i - 1] * P + str[i]) % MOD;
+    }
+}
+
+int calSingleSubH(LL H[], int i, int j) {
+    if(i == 0) {
+        return H[j];   
+    } else {
+        return ((H[j] - H[i - 1] * powP[j - i + 1]) % MOD + MOD) % MOD;
+    }
+}
+
+int binarySearch(int l, int r, int len, int i, int isEven) {
+    while(l < r) {
+        int mid = (l + r) / 2;
+        int H1L = i - mid + isEven, H1R = i;
+        int H2L = len - 1 - (i + mid), H2R = len - 1 - (i + isEven);
+        int hashL = calSingleSubH(H1, H1L, H1R);
+        int hashR = calSingleSubH(H2, H2L, H2R);
+        if(hashL != hashR) {
+            r = mid;
+        } else {
+            l = mid + 1;
+        }
+    }
+    return l - 1;
+}
+
+int main() {
+
+    return 0;
+}
