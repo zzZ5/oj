@@ -45,9 +45,9 @@ const LL P = 10000019;
 const LL MAXN = 10001;
 LL powP[MAXN], H1[MAXN], H2[MAXN];
 
-void init(int len) {
+void init() {
     powP[0] = 1;
-    for(int i = 1; i < len; i++) {
+    for(int i = 1; i < MAXN; i++) {
         powP[i] = (powP[i - 1] * P) % MOD;
     }
 }
@@ -84,6 +84,26 @@ int binarySearch(int l, int r, int len, int i, int isEven) {
 }
 
 int main() {
+    init();
+    string str;
+    getline(cin, str);
+    calH(H1, str);
+    reverse(str.begin(), str.end());
+    calH(H2, str);
+    int ans = 0;
 
+    for(int i = 0; i < str.length(); i++) {
+        int maxLen = min(i, (int)str.length() - 1 - i) + 1;
+        int k = binarySearch(0, maxLen, str.length(), i, 0);
+        ans = max(ans, k * 2 + 1);
+    }
+
+    for(int i = 0; i < str.length(); i++) {
+        int maxLen = min(i + 1, (int)str.length() - 1 - i) + 1;
+        int k = binarySearch(0, maxLen, str.length(), i, 1);
+        ans = max(ans, k * 2);
+    }
+
+    printf("%d", ans);
     return 0;
 }
