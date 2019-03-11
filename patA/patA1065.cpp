@@ -124,7 +124,7 @@ int main(){
         if(compare(add(ba,bb), bc) > 0){
             printf("true\n");
         } else {
-            printf("false\n");            
+            printf("false\n");
         }
     }
     return 0;
