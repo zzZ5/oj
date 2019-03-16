@@ -1,36 +1,37 @@
 #include <cstring>
 #include <cstdio>
 
-bool judge(char[] str) {
-    int countP = 0;
-    int countT = 0;
-
-    for(int i = 0; i < strlen(str); i++) {
-        if(str[i] == 'P'){
-            countP++;
-        } else if(str[i] == 'T') {
-            countT++;
-        } else if(str[i] == 'A') {
-            
-        } else {
-            return false;
-        }
-
-    }
-
-}
-
 int main() {
     int n;
-    char str[110];
+    char str[101];
     scanf("%d", &n);
+    getchar();
     for(int i = 0; i < n; i++) {
-        scanf("%s", str);
-        if(judge(str)) {
-            printf("YES\n")
+        scanf("%s", &str);
+        int len = strlen(str);
+        int numP = 0, numT = 0, other = 0;
+        int posP = -1, posT = -1;
+        for(int i = 0; i < len; i++) {
+            if(str[i] == 'P') {
+                numP++;
+                posP = i;
+            } else if(str[i] == 'T') {
+                numT++;
+                posT = i;
+            } else if(str[i] != 'A') {
+                other++;
+            }
+        }
+        if(numP != 1 || numT != 1 || other != 0 ||posT - posP <= 1) {
+            printf("NO\n");
+            continue;
+        }
+        int leftA = posP, midA = posT - posP - 1, rightA = len - posT - 1;
+        if(rightA == leftA * midA) {
+            printf("YES\n");
         } else {
-            printf("NO\n")
+            printf("NO\n");            
         }
     }
-    return;
+    return 0;
 }
