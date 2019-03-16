@@ -3,13 +3,30 @@
         {
             "name": "Win64",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "D:/Program Files (x86)/Dev-Cpp/MinGW64/include",
+                "D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include",
+                "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include",
+                "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed",
+                "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/install-tools/include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/include",
+                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include",
+                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/7.3.0/include",
+                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed",
+                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/7.3.0/install-tools/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
             "compilerPath": "D:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\gcc.exe",
             "cStandard": "c11",
             "intelliSenseMode": "clang-x64"
