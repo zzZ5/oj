@@ -9,7 +9,7 @@ int main() {
         if(to > cur) {
             total = total + (to - cur) * 6;
         } else {
-            total = total + (cur - to) * 4;            
+            total = total + (cur - to) * 4;
         }
         total += 5;
         cur = to;
