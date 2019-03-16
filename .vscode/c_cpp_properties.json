@@ -4,11 +4,11 @@
             "name": "Win64",
             "includePath": [
                 "${workspaceFolder}/**",
-                "D:/Program Files (x86)/Dev-Cpp/MinGW64/include",
-                "D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include",
-                "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include",
-                "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed",
-                "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/install-tools/include"
+                "D:/mingw64/include",
+                "D:/mingw64/x86_64-w64-mingw32/include",
+                "D:/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include",
+                "D:/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/include-fixed",
+                "D:/mingw64/lib/gcc/x86_64-w64-mingw32/4.9.2/install-tools/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -18,11 +18,11 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}",
-                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/include",
-                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include",
-                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/7.3.0/include",
-                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed",
-                    "D:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/7.3.0/install-tools/include"
+                    "D:/mingw64/include",
+                    "D:/mingw64/x86_64-w64-mingw32/include",
+                    "D:/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include",
+                    "D:/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed",
+                    "D:/mingw64/lib/gcc/x86_64-w64-mingw32/7.3.0/install-tools/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
