@@ -8,8 +8,8 @@ bool cmp(int a,int b) {
 }
 void toArray(int n, int num[]) {
     for(int i = 0; i < DIGIT; i++){
-        num[i]=n%10;
-        n=n/10;
+        num[i] = n % 10;
+        n = n / 10;
     }
 }
 int toNumber(int num[]) {
@@ -32,6 +32,6 @@ int main(){
         max = toNumber(num);
         n = max - min;
         printf("%04d - %04d = %04d\n", max, min, n);
-    }while(n != 0 && n! = 6174);
+    }while(n != 0 && n != 6174);
     return 0;
 }
