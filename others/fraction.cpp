@@ -6,9 +6,8 @@ struct Fraction {
     LL up, down;
 };
 
-int gcd(int a,int b) {
-    if(b == 0) return a;
-    else return gcd(b, a % b);
+int gcd(LL a, LL b) {
+    return b == 0 ? a : gcd(b, a % b);
 }
 
 Fraction reduction(Fraction result) {
@@ -27,10 +26,12 @@ Fraction reduction(Fraction result) {
 
 void showResult(Fraction result) {
     result = reduction(result);
+    if(result.up < 0) printf("(");
     if(result.down == 1) printf("%lld", result.up);
     else if(abs(result.up) > result.down) 
-    printf("%lld %lld/%lld\n", result.up/result.down, (LL)abs(result.up) % result.down, result.down);
-    else printf("%lld/%lld\n",result.up, result.down);
+    printf("%lld %lld/%lld", result.up/result.down, (LL)abs(result.up) % result.down, result.down);
+    else printf("%lld/%lld",result.up, result.down);
+    if(result.up < 0) printf(")");
 }
 
 Fraction add(Fraction f1, Fraction f2) {
@@ -63,17 +64,39 @@ Fraction divide(Fraction f1, Fraction f2) {
 }
 
 int main() {
-    int n;
-    scanf("%d", &n);
-    Fraction ans = {
-        .up = 0,
-        .down = 1
-    };
-    Fraction temp;
-    for(int i = 0; i < n; i++) {
-        scanf("%lld/%lld",&temp.up, &temp.down);
-        ans = add(ans, temp);
-    }
-    showResult(ans);
+    Fraction f1;
+    Fraction f2;
+    scanf("%lld/%lld",&f1.up, &f1.down);
+    scanf("%lld/%lld",&f2.up, &f2.down);
+    
+    showResult(f1);
+    printf(" + ");
+    showResult(f2);
+    printf(" = ");
+    showResult(add(f1, f2));
+    printf("\n");
+
+    showResult(f1);
+    printf(" - ");
+    showResult(f2);
+    printf(" = ");
+    showResult(minu(f1, f2));
+    printf("\n");
+
+    showResult(f1);
+    printf(" * ");
+    showResult(f2);
+    printf(" = ");
+    showResult(multi(f1, f2));
+    printf("\n");
+
+    showResult(f1);
+    printf(" / ");
+    showResult(f2);
+    printf(" = ");
+    if(f2.up == 0) printf("Inf");
+    else showResult(divide(f1, f2));
+    printf("\n");
+
     return 0;
 }
