@@ -14,11 +14,11 @@ int main() {
             else hashTable[color]++;
         }
     }
-    int dominColor, count = 0;
+    int dominColor, maxNum = 0;
     for(map<int, int>::iterator it = hashTable.begin(); it != hashTable.end(); it++) {
-        if(it->second > count) {
+        if(it->second > maxNum) {
             dominColor = it->first;
-            count = it->second;
+            maxNum = it->second;
         }
     }
     printf("%d\n",dominColor);
