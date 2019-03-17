@@ -40,7 +40,6 @@ string deal(string s, int &e) {
     return res;
 }
 
-
 int main(){
     string s1, s2, s3, s4;
     cin >> n >> s1 >> s2;
