@@ -1,27 +1,25 @@
-#include<cstdio>
-#include<cstring>
-#include<queue>
-#include<algorithm>
+#include <cstdio>
+#include <cstring>
+#include <queue>
+#include <algorithm>
 using namespace std;
-const int maxn=50;
+const int maxn = 50;
 
-struct node{
+struct node {
     int data;
     node* lchild;
     node* rchild;
 };
-int in[maxn],post[maxn];
+int in[maxn], post[maxn];
 int n;
 
-node* create(int postL, int postR, int inL, int inR){
-    if(postL > postR){
-        return NULL;
-    }
+node* create(int postL, int postR, int inL, int inR) {
+    if(postL > postR) return NULL;
     node *root = new node;
-    root->data=post[postR];
+    root->data = post[postR];
     int k;
-    for(k = inL; k <= inR; k++){
-        if(in[k] == post[postR]){
+    for(k = inL; k <= inR; k++) {
+        if(in[k] == post[postR]) {
             break;
         }
     }
@@ -31,14 +29,14 @@ node* create(int postL, int postR, int inL, int inR){
     return root;
 }
 
-void BFS(node* root){
+void BFS(node* root) {
     queue<node*> q;
     q.push(root);
     int num = 0;
-    while(!q.empty()){
+    while(!q.empty()) {
         node* temp = q.front();
         q.pop();
-        printf("%d",temp->data);
+        printf("%d", temp->data);
         num++;
         if (num < n) {
             printf(" ");
@@ -53,15 +51,15 @@ void BFS(node* root){
 }
 
 
-int main(){
+int main() {
     scanf("%d", &n);
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < n; i++) {
         scanf("%d", &post[i]);
     }
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < n; i++) {
         scanf("%d", &in[i]);
     }
-    node* root = create(0, n-1, 0, n-1);
+    node* root = create(0, n - 1, 0, n - 1);
     BFS(root);
     return 0;
 }       
