@@ -1,5 +1,5 @@
-// #include<cstdio>
-// #include<math.h>
+// #include <cstdio>
+// #include <math.h>
 // const double MIN = 1e-8;
 // const int MAX = 1001;
 // int main() {
@@ -34,8 +34,8 @@
 // }
 
 
-#include<cstdio>
-#include<math.h>
+#include <cstdio>
+#include <math.h>
 const double MIN = 1e-8;
 struct node {
     int index;
@@ -76,8 +76,8 @@ int main() {
     n = na+nb;
     A = headA;
     B = headB;
-    while(A->next && B->next){
-        if(A->next->index > B->next->index){
+    while(A->next && B->next) {
+        if(A->next->index > B->next->index) {
             A = A->next;
         }else if(A->next->index == B->next->index) {
             A->next->num = A->next->num + B->next->num;
