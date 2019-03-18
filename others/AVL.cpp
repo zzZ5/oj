@@ -1,7 +1,7 @@
-#include<cstdio>
-#include<algorithm>
+#include <cstdio>
+#include <algorithm>
 using namespace std;
-const int MAX=100;
+const int MAX = 100;
 
 struct node {
     int height, data;
@@ -9,7 +9,7 @@ struct node {
 };
 
 node* newNode(int data) {
-    node  *Node=new node;
+    node *Node = new node;
     Node->data = data;
     Node->height = 1;
     Node->lchild = Node->rchild = NULL;
@@ -17,11 +17,8 @@ node* newNode(int data) {
 }
 
 int getHeight(node *root) {
-    if(root) {
-        return root->height;
-    } else {
-        return 0;
-    }
+    if(root) return root->height; 
+    else return 0;
 }
 
 int getBalanceFactor(node *root) {
@@ -33,16 +30,10 @@ void updateHeight(node *root) {
 }
 
 void search(node *root, int x) {
-    if(!root) {
-        printf("search failed\n");
-    }
-    if(root->data == x){
-        printf("%d\n", root->data);
-    } else if(root->data > x) {
-        search(root->lchild, x);
-    } else {
-        search(root->rchild, x);
-    }
+    if(!root) printf("search failed\n");
+    if(root->data == x) printf("%d\n", root->data);
+    else if(root->data > x) search(root->lchild, x);
+    else search(root->rchild, x);
 }
 
 void L(node *&root) {
@@ -72,9 +63,8 @@ void insert(node *&root, int data) {
         insert(root->lchild, data);
         updateHeight(root);
         if(getBalanceFactor(root) == 2) {
-            if(getBalanceFactor(root->lchild) == 1) {
-                R(root);
-            } else if(getBalanceFactor(root->lchild) == -1) {
+            if(getBalanceFactor(root->lchild) == 1) R(root);
+            else if(getBalanceFactor(root->lchild) == -1) {
                 L(root->lchild);
                 R(root);
             }
@@ -83,8 +73,7 @@ void insert(node *&root, int data) {
         insert(root->rchild, data);
         updateHeight(root);
         if(getBalanceFactor(root) == -2) {
-            if(getBalanceFactor(root->rchild) == -1) {
-                L(root);
+            if(getBalanceFactor(root->rchild) == -1) L(root);
             }else if(getBalanceFactor(root->rchild) == 1) {
                 R(root->rchild);
                 L(root);
@@ -95,21 +84,18 @@ void insert(node *&root, int data) {
 
 node *Create(int data[], int n) {
     node* root = NULL;
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++)
         insert(root, data[i]);
-    }
     return root;
 }
 
 int main() {
     int n, data[MAX];
     scanf("%d", &n);
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++)
         scanf("%d", &data[i]);
-    }
     node *root = Create(data,n);
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < n; i++)
         search(root, data[i]);
-    }
     return 0;
 }
