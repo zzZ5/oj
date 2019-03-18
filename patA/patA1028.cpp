@@ -1,6 +1,6 @@
 #include <cstdio>
 #include <cstring>
-#include<algorithm>
+#include <algorithm>
 using namespace std;
 const int MAXN = 100001;
 
