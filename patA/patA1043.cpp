@@ -1,5 +1,5 @@
-#include<cstdio>
-#include<vector>
+#include <cstdio>
+#include <vector>
 using namespace std;
 
 struct node {
@@ -9,22 +9,17 @@ struct node {
 
 void insert(node *&root, int data) {
     if(!root){
-        root=new node;
+        root = new node;
         root->data = data;
         root->lchild = root->rchild = NULL;
         return;
     }
-    if(root->data > data) {
-        insert(root->lchild, data);
-    }else{
-        insert(root->rchild, data);
-    }
+    if(root->data > data) insert(root->lchild, data);
+    else insert(root->rchild, data);
 }
 
 void preOrder(node *root, vector<int> &vi, bool mirror) {
-    if(!root) {
-        return;
-    }
+    if(!root) return;
     vi.push_back(root->data);
     if(mirror) {
         preOrder(root->rchild, vi, mirror);
@@ -36,9 +31,7 @@ void preOrder(node *root, vector<int> &vi, bool mirror) {
 }
 
 void postOrder(node *root, vector<int> &vi, bool mirror) {
-    if(!root) {
-        return;
-    }
+    if(!root) return;
     if(mirror) {
         postOrder(root->rchild, vi, mirror);
         postOrder(root->lchild, vi, mirror);
@@ -52,7 +45,7 @@ void postOrder(node *root, vector<int> &vi, bool mirror) {
 vector<int> origin, pre, preM, post, postM;
 int main() {
     int n, data;
-    node *root=NULL;
+    node *root = NULL;
     scanf("%d", &n);
     for(int i = 0; i < n; i++) {
         scanf("%d", &data);
@@ -75,12 +68,8 @@ int main() {
         printf("YES\n");
         for(int i = 0; i < postM.size(); i++) {
             printf("%d", postM[i]);
-            if(i<postM.size() - 1){
-                printf(" ");
-            }
+            if(i < postM.size() - 1) printf(" ");
         }
-    } else {
-        printf("NO\n");
-    }
+    } else printf("NO\n");
     return 0;
 }
