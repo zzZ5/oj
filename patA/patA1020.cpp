@@ -62,4 +62,4 @@ int main() {
     node* root = create(0, n - 1, 0, n - 1);
     BFS(root);
     return 0;
-}       
+}
