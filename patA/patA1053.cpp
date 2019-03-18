@@ -1,53 +1,46 @@
-#include<cstdio>
-#include<vector>
-#include<algorithm>
+#include <cstdio>
+#include <vector>
+#include <algorithm>
 using namespace std;
-const int MAX=110;
+const int MAX = 101;
 int nodeNum, edgeNum, Sum, path[MAX];
     
-struct Node{
+struct Node {
     int weight;
     vector<int> child;
-}node[MAX];
+} node[MAX];
 
-bool cmp(int a, int b){
+bool cmp(int a, int b) {
     return node[a].weight > node[b].weight;
 }
 
 void DFS(int index, int numNode, int sum){
-    if (sum > Sum) {
-        return;
-    }
+    if (sum > Sum) return;
     if (sum == Sum) {
-       if (node[index].child.size() != 0) {
-           return;
-       }
-       for(int i = 0; i < numNode; i++){
+       if (node[index].child.size() != 0) return;
+       for(int i = 0; i < numNode; i++) {
            printf("%d", node[path[i]].weight);
-           if(i<numNode-1){
-               printf(" ");
-           }else{
-               printf("\n");
-           }
+           if(i < numNode - 1) printf(" ");
+           else printf("\n");
        }
         return;
     }
-    for(int i = 0; i < node[index].child.size(); i++){
+    for(int i = 0; i < node[index].child.size(); i++) {
         int child = node[index].child[i];
         path[numNode] = child;
         DFS(child, numNode + 1, sum + node[child].weight);
-    }    
+    }
 }
 
-int main(){
+int main() {
     scanf("%d%d%d", &nodeNum, &edgeNum, &Sum);
-    for(int i = 0; i < nodeNum; i++){
+    for(int i = 0; i < nodeNum; i++) {
         scanf("%d", &node[i].weight);
     }
     int id, k ,child;
-    for(int i = 0; i < edgeNum; i++){
+    for(int i = 0; i < edgeNum; i++) {
         scanf("%d%d", &id, &k);
-        for(int j = 0; j < k; j++){
+        for(int j = 0; j < k; j++) {
             scanf("%d", &child);
             node[id].child.push_back(child);
         }
