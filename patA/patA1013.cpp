@@ -10,9 +10,10 @@ int curPoint;
 
 void dfs(int v) {
     if(v == curPoint) return;
-    vis[v] == true;
-    for(int i = 0; i < G[v].size(); i++) {
-        dfs(G[v][i]);
+    visit[v] = true;
+    for(int i = 0; i < (int)G[v].size(); i++) {
+        if(!visit[G[v][i]])
+            dfs(G[v][i]);
     }
 }
 
@@ -31,8 +32,8 @@ int main() {
         memset(visit, false, sizeof(visit));
         int block= 0;
         for(int j = 1; j <= n; j++) {
-            if(i != curPoint && !visit[i]) {
-                dfs(i);
+            if(j != curPoint && !visit[j]) {
+                dfs(j);
                 block++;
             }
         }
