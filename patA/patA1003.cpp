@@ -24,9 +24,7 @@ void Dijkstra() {
                 minLength = d[j];
             }
         }
-        if(u == -1) {
-            return;
-        }
+        if(u == -1) return;
         visit[u] = true;
         for(int v = 0; v < nodeNum; v++) {
             if(!visit[v] && G[u][v] != INF) {
@@ -48,9 +46,8 @@ void Dijkstra() {
 
 int main() {
     scanf("%d%d%d%d", &nodeNum, &edgeNum, &st, &ed);
-    for(int i = 0; i < nodeNum; i++) {
+    for(int i = 0; i < nodeNum; i++)
         scanf("%d", &weight[i]);
-    }
     int u, v;
     fill(G[0], G[0]+MAX*MAX, INF);
     for(int i = 0; i < edgeNum; i++) {
