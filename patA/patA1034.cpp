@@ -4,8 +4,8 @@
 #include<queue>
 
 using namespace std;
-const int MAX = 2000;
-const int INF = 1000000000;
+const int MAX = 2001;
+const int INF = 0x3fffffff;
 
 map<int, string> int2string;
 map<string, int> string2int;
