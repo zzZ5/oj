@@ -4,6 +4,7 @@
 using namespace std;
 const int MAX = 501;
 const int INF = 0x3fffffff;
+
 int nodeNum, edgeNum, st, ed, G[MAX][MAX], cost[MAX][MAX];
 int consume[MAX], d[MAX], pre[MAX];
 bool visit[MAX]={false};
