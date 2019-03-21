@@ -4,9 +4,11 @@
 #include <queue>
 using namespace std;
 const int MAX = 1000;
+
 struct Node {
     int id,layer;
 };
+
 vector<Node> adj[MAX];
 bool visit[MAX];
 
