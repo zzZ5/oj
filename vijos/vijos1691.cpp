@@ -5,7 +5,7 @@ using namespace std;
 int a[10001];
 
 int main() {
-    int n, x, y, mid, sum;
+    int n, x, y, mid, sum = 0;
     scanf("%d", &n);
     for(int i = 0; i < n; i++) {
         scanf("%d%d", &x, &y);
